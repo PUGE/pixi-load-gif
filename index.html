@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>pixi-apngAndGif demo</title>
+</head>
+<body>
+    <h3>gif：</h3>
+    <script src="https://cdn.staticfile.org/pixi.js/4.8.2/pixi.min.js"></script>
+    <script src="./gif.js"></script>
+    <script>
+      const app = new PIXI.Application()
+      const loader = PIXI.loader,
+      loadOption = {
+        loadType: PIXI.loaders.Resource.LOAD_TYPE.XHR,
+        xhrType: PIXI.loaders.Resource.XHR_RESPONSE_TYPE.BUFFER,
+        crossOrigin:''
+      },
+      imgs = {
+        gif:'./1.gif'
+      }
+      loader.add(imgs.gif,loadOption)
+      loader.load((progress,resources)=>{
+        let gifSprite = new GIF('./1.gif', resources)
+        gifSprite.sprite.x = 10
+        gifSprite.sprite.y = 10
+        app.stage.addChild(gifSprite.sprite)
+        document.body.appendChild(app.view)
+      })
+      
+    </script>
+</body>
+</html>
