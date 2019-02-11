@@ -704,7 +704,6 @@ class GIF{
    */
   apngResourceToTextures(resource){
       const _ts = this;
-
       let obj = {
               delayTimes:[],
               textures:[]
@@ -756,6 +755,7 @@ class GIF{
    */
   gifResourceToTextures(resource){
       const _ts = this;
+      console.log(resource.data)
       let obj = {
               delayTimes:[],
               textures:[]

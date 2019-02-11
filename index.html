@@ -8,7 +8,7 @@
 </head>
 <body>
     <h3>gif：</h3>
-    <script src="https://cdn.staticfile.org/pixi.js/4.8.2/pixi.min.js"></script>
+    <script src="./pixi.min.js"></script>
     <script src="./gif.js"></script>
     <script>
       const app = new PIXI.Application()
@@ -21,7 +21,7 @@
       imgs = {
         gif:'./1.gif'
       }
-      loader.add(imgs.gif,loadOption)
+      loader.add(imgs.gif)
       loader.load((progress,resources)=>{
         let gifSprite = new GIF('./1.gif', resources)
         gifSprite.sprite.x = 10
